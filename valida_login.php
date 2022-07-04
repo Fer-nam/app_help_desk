@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
     <?php
 
     session_start();
@@ -16,7 +6,7 @@
     $_SESSION['x'] = 'Oi, sou um valor de sessão!';
     print_r($_SESSION);
     echo '<hr>';
-    echo $_SESSION['y'] . '<br>';
+    print_r($_SESSION['y']);
 
     //Variavel que verifica se a autenticação for validada
 
@@ -46,7 +36,8 @@
 
     if ($usuario_autenticado) {
         echo 'Usuário autenticado';
-        $_SESSION['autenticado'] = 'Sim';
+        $_SESSION['autenticado'] = 'SIM';
+      
     } else {
         $_SESSION['autenticado'] = 'Não';
         header('location: index.php?login=erro');
@@ -73,6 +64,3 @@
     */
 
     ?>
-</body>
-
-</html>
